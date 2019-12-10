@@ -21,7 +21,8 @@ CREATE TABLE `giftit`.`categorie` (
 	`CategorieID`	INT(6) 		NOT NULL AUTO_INCREMENT,
     `Naam`	 		VARCHAR(35) NOT NULL,
     `SubCategorie`  VARCHAR(35) NOT NULL,
-    CONSTRAINT `categoriePK` PRIMARY KEY (`CategorieID`)
+    CONSTRAINT `categoriePK` PRIMARY KEY (`CategorieID`),
+    CONSTRAINT `categorieFK` FOREIGN KEY `giftit`.`categorie` (`CategorieID`)
 );
 
 /* Create Advertentie tabel */
