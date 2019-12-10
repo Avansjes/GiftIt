@@ -20,9 +20,9 @@ CREATE TABLE `giftit`.`gebruiker` (
 CREATE TABLE `giftit`.`categorie` (
 	`CategorieID`	INT(6) 		NOT NULL AUTO_INCREMENT,
     `Naam`	 		VARCHAR(35) NOT NULL,
-    `SubCategorie`  VARCHAR(35) NOT NULL,
+    `SubCategorie`  INT(6) NOT NULL,
     CONSTRAINT `categoriePK` PRIMARY KEY (`CategorieID`),
-    CONSTRAINT `categorieFK` FOREIGN KEY `giftit`.`categorie` (`CategorieID`)
+    CONSTRAINT `categorieFK` FOREIGN KEY(`SubCategorie`) REFERENCES `giftit`.`categorie` (`CategorieID`)
 );
 
 /* Create Advertentie tabel */
