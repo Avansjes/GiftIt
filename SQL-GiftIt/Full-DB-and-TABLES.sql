@@ -45,31 +45,6 @@ CREATE TABLE `giftit`.`advertentie` (
     CONSTRAINT `advertentieFK2` FOREIGN KEY (`CategorieID`) REFERENCES `giftit`.`categorie` (`CategorieID`) ON DELETE NO ACTION ON UPDATE CASCADE 
 );
 
-/* Create Personeel tabel */
-CREATE TABLE `giftit`.`personeel` (
-	`PersoneelsID`	INT(6) NOT NULL AUTO_INCREMENT,
-    `Voornaam` 		VARCHAR(25) NOT NULL,
-    `Achternaam` 	VARCHAR(25) NOT NULL, 
-    `Straat`		VARCHAR(35) NOT NULL,
-    `Huisnummer`	VARCHAR(10) NOT NULL,
-    `Postcode`		VARCHAR(6) 	NOT NULL,
-    `Stad`			VARCHAR(35) NOT NULL,
-    `Land`			VARCHAR(35) NOT NULL,
-    `Functie`		VARCHAR(35) NOT NULL DEFAULT 'Administrator',
-    CONSTRAINT `personeelPK` PRIMARY KEY(`PersoneelsID`)
-);
-
-/* Create UrenRegistratie tabel */
-CREATE TABLE `giftit`.`urenregistratie` (
-	`RegistratieID`		int(6) NOT NULL AUTO_INCREMENT,
-    `StartDstamp`		DATETIME NOT NULL,
-    `StopDstamp`        DATETIME NOT NULL,
-    `GewerkteUren`		TIMESTAMP,
-    `PersoneelsID`      INT(6) NOT NULL,
-    CONSTRAINT `urenregistratiePK` PRIMARY KEY(`RegistratieID`),
-    CONSTRAINT `urenregistratieFK` FOREIGN KEY(`PersoneelsID`) REFERENCES `giftit`.`personeel` (`PersoneelsID`) ON DELETE NO ACTION ON UPDATE CASCADE
-);
-
 /* Create vervoerder tabel */
 CREATE TABLE `giftit`.`vervoerder` (
 `Vervoerder`        VARCHAR(35) NOT NULL,
@@ -111,8 +86,7 @@ CREATE TABLE `giftit`.`order` (
     CONSTRAINT `orderFK1` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
     CONSTRAINT `orderFK2` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `orderFK3` FOREIGN KEY(`Vervoerder`,`ServiceLevel`) REFERENCES `giftit`.`vervoerder` (`Vervoerder`,`ServiceLevel`) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT `orderFK4` FOREIGN KEY(`BookingID`) REFERENCES `giftit`.`booking` (`BookingID`) ON DELETE SET NULL ON UPDATE CASCADE,
-    CONSTRAINT `orderFK5` FOREIGN KEY(`PersoneelsID`) REFERENCES `giftit`.`personeel` (`PersoneelsID`) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT `orderFK4` FOREIGN KEY(`BookingID`) REFERENCES `giftit`.`booking` (`BookingID`) ON DELETE SET NULL ON UPDATE CASCADE
 );
 
 /* Create pakketvolgnr tabel */
@@ -138,8 +112,7 @@ CREATE TABLE `giftit`.`transactie` (
     CONSTRAINT `transactiePK` PRIMARY KEY(`TransactieID`),
     CONSTRAINT `transactieFK1` FOREIGN KEY(`OrderID`) REFERENCES `giftit`.`order` (`OrderID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `transactieFK2` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `transactieFK3` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `transactieFK4` FOREIGN KEY(`PersoneelsID`) REFERENCES `giftit`.`personeel` (`PersoneelsID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT `transactieFK3` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 /* Create view headline */
