@@ -5,15 +5,18 @@ CREATE DATABASE giftit CHARACTER SET utf8 COLLATE utf8_general_ci;
 /* Create TABLES */
 /* Create gebruiker tabel */
 CREATE TABLE `giftit`.`gebruiker` (
-	`GebruikerID` 	INT(6) 		NOT NULL AUTO_INCREMENT,
-    `Voornaam` 		VARCHAR(25) NOT NULL,
-    `Achternaam` 	VARCHAR(25) NOT NULL, 
-    `Straat`		VARCHAR(35) NOT NULL,
-    `Huisnummer`	VARCHAR(10) NOT NULL,
-    `Postcode`		VARCHAR(6) 	NOT NULL,
-    `Stad`			VARCHAR(35) NOT NULL,
-    `Land`			VARCHAR(35) NOT NULL,
-    CONSTRAINT `gebruikerPK` PRIMARY KEY (`GebruikerID`)
+	`GebruikersID`	VARCHAR(20) NOT NULL,
+	`Email`		VARCHAR(30) NOT NULL,
+	`GebruikersNaam` VARCHAR(30) NOT NULL,
+	`Voornaam`	VARCHAR(25) NOT NULL,
+	`Achternaam`	VARCHAR(25) NOT NULL, 
+	`Straat`	VARCHAR(50) NOT NULL,
+	`Huisnummer`	VARCHAR(5) NOT NULL,
+	`Postcode`	VARCHAR(6)  NOT NULL,
+	`Stad`		VARCHAR(30) NOT NULL,
+	`Land`		VARCHAR(30) NOT NULL,
+	`Rol`		VARCHAR(10) NOT NULL,
+	CONSTRAINT `gebruikerPK` PRIMARY KEY (`GebruikersID`)
 );
 
 /* Create Categorie tabel */
@@ -29,7 +32,7 @@ CREATE TABLE `giftit`.`categorie` (
 CREATE TABLE `giftit`.`advertentie` (
 	`AdvID` 		INT(6) 			NOT NULL AUTO_INCREMENT,
     `AanmaakDatum` 	DATETIME,
-    `GebruikerID` 	INT(6)			NOT NULL, 
+    `GebruikersID` 	INT(6)			NOT NULL, 
     `CategorieID`	INT(6)       	NOT NULL,
     `Titel`			VARCHAR(20) 	NOT NULL,
     `Inhoud`		VARCHAR(1000) 	NOT NULL,
@@ -38,7 +41,7 @@ CREATE TABLE `giftit`.`advertentie` (
     `VerzendKosten` DECIMAL(8,2) DEFAULT '3.50',
     `StatusProduct` VARCHAR(40)	DEFAULT 'Herbruikbaar tweedehands product',
     CONSTRAINT `advertentiePK` PRIMARY KEY(`AdvID`),
-    CONSTRAINT `advertentieFK1` FOREIGN KEY (`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT `advertentieFK1` FOREIGN KEY (`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `advertentieFK2` FOREIGN KEY (`CategorieID`) REFERENCES `giftit`.`categorie` (`CategorieID`) ON DELETE NO ACTION ON UPDATE CASCADE 
 );
 
