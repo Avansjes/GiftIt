@@ -4,6 +4,12 @@ INSERT INTO `gebruikers` (`GebruikersID`, `Email`, `GebruikersNaam`, `Voornaam`,
 INSERT INTO `gebruikers` (`GebruikersID`, `Email`, `GebruikersNaam`, `Voornaam`, `Achternaam`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`, `Rol`) VALUES ('082381', 'famgoossens@goossens.nl', 'Jan Goossens', 'Jan', 'Goossens', 'Grote Heistraat', '31', '2341BE', 'Rotterdam', 'Nederland', 'Gebruiker');
 INSERT INTO `gebruikers` (`GebruikersID`, `Email`, `GebruikersNaam`, `Voornaam`, `Achternaam`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`, `Rol`) VALUES ('052821', 'blijemiesje@gmail.com', 'MeisjeMiesje', 'Wies', 'Klarens', 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands', 'Gebruiker');
 
+/* INSERT data `categorie` */
+INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (1, 'Huis en Inrichting', NULL);
+INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Antiek en Kunst', NULL);
+INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Badkamer', 1);
+INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Woonkamer', 1);
+
 /* INSERT data `gebruikers` */
 CALL `insert_pakketvolgnr` (05118987073542,"DHL","Next day",1);
 CALL `insert_pakketvolgnr` (05118987073543,"PostNL","Next day",2);
