@@ -5,7 +5,7 @@ CREATE PROCEDURE `insert_pakketvolgnr` (
 	IN `par_TrackingNO` VARCHAR(40), 
 	IN `par_Vervoerder` VARCHAR(35), 
 	IN `par_ServiceLevel` VARCHAR(35), 
-	IN `par_OrderID` INT(6), 
+	IN `par_OrderID` INT(6)) 
 BEGIN 
 	INSERT INTO `pakketvolgnr` ( 
 	`TrackingNO`, 
@@ -13,10 +13,10 @@ BEGIN
 	`ServiceLevel`, 
 	`OrderID`) VALUES ( 
 	NULL, 
-	par_TrackingNO, 
-	par_Vervoerder, 
-	par_ServiceLevel, 
-	par_OrderID);
+	`par_TrackingNO`, 
+	`par_Vervoerder`, 
+	`par_ServiceLevel`, 
+	`par_OrderID`);
 END;
 //
 
