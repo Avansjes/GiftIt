@@ -80,8 +80,7 @@ CREATE TABLE `giftit`.`order` (
     `StatusOrder`   VARCHAR(25) NOT NULL DEFAULT 'Aangemaakt',
     `Vervoerder`    VARCHAR(35) NOT NULL,
     `ServiceLevel`  VARCHAR(35) NOT NULL,
-    `BookingID`		INT(6)      NULL,
-    `PersoneelsID`   INT(6) 		NOT NULL,
+    `BookingID`		INT(6)      NULL
  	CONSTRAINT `orderPK` PRIMARY KEY(`OrderID`),
     CONSTRAINT `orderFK1` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
     CONSTRAINT `orderFK2` FOREIGN KEY(`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE RESTRICT ON UPDATE CASCADE,
