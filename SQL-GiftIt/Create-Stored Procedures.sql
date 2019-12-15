@@ -42,3 +42,15 @@ END;
 /* Voorbeeld nieuwe vervoerder toevoegen middels Storede Function */
 call `insertVervoerder` ('FEDEX','EXPRESS', @restultaat1,@restultaat2,@restultaat3,@restultaat4);
 select @restultaat1,@restultaat2,@restultaat3,@restultaat4;
+
+/* Create Trigger op tabel order om inserts te genereren voor de tabel transactie */
+DELIMITER //
+CREATE OR REPLACE TRIGGER `transactie_geschiedenis`
+AFTER INSERT ON `giftit`.`order`
+FOR EACH ROW
+
+BEGIN
+	INSERT INTO `giftit`.`transactie` VALUES (
+        null, new.OrderID, new.AdvID, new.GebruikersID, new.StatusOrder, new.StatusOrder, new.PersoneelsID);
+END
+//
