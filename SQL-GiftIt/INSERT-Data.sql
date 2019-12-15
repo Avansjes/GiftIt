@@ -10,7 +10,7 @@ INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL,
 INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Badkamer', 1);
 INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Woonkamer', 1);
 
-/* INSERT data `gebruikers` */
+/* INSERT data `pakketvolgnr` */
 CALL `insert_pakketvolgnr` (05118987073542,"DHL","Next day",1);
 CALL `insert_pakketvolgnr` (05118987073543,"PostNL","Next day",2);
 CALL `insert_pakketvolgnr` (05118987073544,"DHL","Next day",3);
