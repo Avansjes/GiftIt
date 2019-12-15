@@ -5,7 +5,7 @@ CREATE DATABASE giftit CHARACTER SET utf8 COLLATE utf8_general_ci;
 /* Create TABLES */
 /* Create gebruiker tabel */
 CREATE TABLE `giftit`.`gebruiker` (
-	`GebruikersID`	VARCHAR(20) NOT NULL,
+	`GebruikersID`	INT(6) NOT NULL,
 	`Email`		VARCHAR(30) NOT NULL,
 	`GebruikersNaam` VARCHAR(30) NOT NULL,
 	`Voornaam`	VARCHAR(25) NOT NULL,
@@ -60,7 +60,7 @@ CREATE TABLE `giftit`.`booking` (
     `Vervoerder`	VARCHAR(35) NOT NULL,
     `ServiceLevel`	VARCHAR(35) NOT NULL,
     `AdvID`			INT(6) 		NOT NULL,
-    `GebruikerID`	INT(6)		NOT NULL,
+    `GebruikersID`	INT(6)		NOT NULL,
     `Straat`		VARCHAR(35) NOT NULL,
     `Huisnummer`	VARCHAR(10) NOT NULL,
     `Postcode`		VARCHAR(6) 	NOT NULL,
@@ -69,14 +69,14 @@ CREATE TABLE `giftit`.`booking` (
     CONSTRAINT `bookingPK` PRIMARY KEY(`BookingID`),
     CONSTRAINT `bookingFK1` FOREIGN KEY(`Vervoerder`,`ServiceLevel`) REFERENCES `giftit`.`vervoerder` (`Vervoerder`, `ServiceLevel`) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `bookingFK2` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-    CONSTRAINT `bookingFK3` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE RESTRICT ON UPDATE CASCADE
+    CONSTRAINT `bookingFK3` FOREIGN KEY(`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE RESTRICT ON UPDATE CASCADE
 );
 
 /* Create Order tabel */
 CREATE TABLE `giftit`.`order` (
 	`OrderID`  		INT(6) 		NOT NULL AUTO_INCREMENT,
     `AdvID`	   		INT(6) 		NOT NULL,
-    `GebruikerID`	INT(6) 		NOT NULL,
+    `GebruikersID`	INT(6) 		NOT NULL,
     `StatusOrder`   VARCHAR(25) NOT NULL DEFAULT 'Aangemaakt',
     `Vervoerder`    VARCHAR(35) NOT NULL,
     `ServiceLevel`  VARCHAR(35) NOT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE `giftit`.`order` (
     `PersoneelsID`   INT(6) 		NOT NULL,
  	CONSTRAINT `orderPK` PRIMARY KEY(`OrderID`),
     CONSTRAINT `orderFK1` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE RESTRICT ON UPDATE RESTRICT,
-    CONSTRAINT `orderFK2` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE RESTRICT ON UPDATE CASCADE,
+    CONSTRAINT `orderFK2` FOREIGN KEY(`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE RESTRICT ON UPDATE CASCADE,
     CONSTRAINT `orderFK3` FOREIGN KEY(`Vervoerder`,`ServiceLevel`) REFERENCES `giftit`.`vervoerder` (`Vervoerder`,`ServiceLevel`) ON DELETE CASCADE ON UPDATE CASCADE,
     CONSTRAINT `orderFK4` FOREIGN KEY(`BookingID`) REFERENCES `giftit`.`booking` (`BookingID`) ON DELETE SET NULL ON UPDATE CASCADE
 );
@@ -105,14 +105,14 @@ CREATE TABLE `giftit`.`transactie` (
 	`TransactieID`		INT(6) 		NOT NULL AUTO_INCREMENT,
     `OrderID`			INT(6) 		NOT NULL,
     `AdvID`				INT(6) 		NOT NULL,
-    `GebruikerID`		INT(6) 		NOT NULL,
+    `GebruikersID`		INT(6) 		NOT NULL,
     `StatusOrder`		VARCHAR(35) NOT NULL,
     `Gebeurtenis`		VARCHAR(35) NOT NULL,
     `PersoneelsID`		INT(6)		NOT NULL,
     CONSTRAINT `transactiePK` PRIMARY KEY(`TransactieID`),
     CONSTRAINT `transactieFK1` FOREIGN KEY(`OrderID`) REFERENCES `giftit`.`order` (`OrderID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `transactieFK2` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-    CONSTRAINT `transactieFK3` FOREIGN KEY(`GebruikerID`) REFERENCES `giftit`.`gebruiker` (`GebruikerID`) ON DELETE NO ACTION ON UPDATE NO ACTION
+    CONSTRAINT `transactieFK3` FOREIGN KEY(`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
 
 /* Create view headline */
