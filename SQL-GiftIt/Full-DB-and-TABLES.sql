@@ -23,7 +23,7 @@ CREATE TABLE `giftit`.`gebruiker` (
 CREATE TABLE `giftit`.`categorie` (
 	`CategorieID`	INT(6) 		NOT NULL AUTO_INCREMENT,
     `Naam`	 		VARCHAR(35) NOT NULL,
-    `SubCategorieVan`  INT(6) NOT NULL,
+    `SubCategorieVan`  INT(6) NULL,
     CONSTRAINT `categoriePK` PRIMARY KEY (`CategorieID`),
     CONSTRAINT `categorieFK` FOREIGN KEY(`SubCategorieVan`) REFERENCES `giftit`.`categorie` (`CategorieID`)
 );
