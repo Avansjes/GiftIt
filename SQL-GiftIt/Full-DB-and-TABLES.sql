@@ -5,7 +5,7 @@ CREATE DATABASE giftit CHARACTER SET utf8 COLLATE utf8_general_ci;
 /* Create TABLES */
 /* Create gebruiker tabel */
 CREATE TABLE `giftit`.`gebruiker` (
-	`GebruikersID`	INT(6) NOT NULL,
+	`GebruikersID`	INT(6) NOT NULL AUTO_INCREMENT,
 	`Email`		VARCHAR(30) NOT NULL,
 	`GebruikersNaam` VARCHAR(30) NOT NULL,
 	`Voornaam`	VARCHAR(25) NOT NULL,
@@ -23,7 +23,7 @@ CREATE TABLE `giftit`.`gebruiker` (
 CREATE TABLE `giftit`.`categorie` (
 	`CategorieID`	INT(6) 		NOT NULL AUTO_INCREMENT,
     `Naam`	 		VARCHAR(35) NOT NULL,
-    `SubCategorieVan`  INT(6) NULL,
+    `SubCategorieVan`  INT(6) NOT NULL,
     CONSTRAINT `categoriePK` PRIMARY KEY (`CategorieID`),
     CONSTRAINT `categorieFK` FOREIGN KEY(`SubCategorieVan`) REFERENCES `giftit`.`categorie` (`CategorieID`)
 );
