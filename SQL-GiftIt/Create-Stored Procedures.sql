@@ -44,9 +44,22 @@ call `insertVervoerder` ('FEDEX','EXPRESS', @restultaat1,@restultaat2,@restultaa
 select @restultaat1,@restultaat2,@restultaat3,@restultaat4;
 
 /* Create Trigger op tabel order om inserts te genereren voor de tabel transactie */
+/* Na een insert in de order tabel */
 DELIMITER //
-CREATE OR REPLACE TRIGGER `transactie_geschiedenis`
+CREATE OR REPLACE TRIGGER `transactie_na_insert`
 AFTER INSERT ON `giftit`.`order`
+FOR EACH ROW
+
+BEGIN
+	INSERT INTO `giftit`.`transactie` VALUES (
+        null, new.OrderID, new.AdvID, new.GebruikersID, new.StatusOrder, new.StatusOrder);
+END
+//
+
+/* Na een update in de order tabel */
+DELIMITER //
+CREATE OR REPLACE TRIGGER `transactie_na_update`
+AFTER UPDATE ON `giftit`.`order`
 FOR EACH ROW
 
 BEGIN
