@@ -107,7 +107,6 @@ CREATE TABLE `giftit`.`transactie` (
     `GebruikersID`		INT(6) 		NOT NULL,
     `StatusOrder`		VARCHAR(35) NOT NULL,
     `Gebeurtenis`		VARCHAR(35) NOT NULL,
-    `PersoneelsID`		INT(6)		NOT NULL,
     CONSTRAINT `transactiePK` PRIMARY KEY(`TransactieID`),
     CONSTRAINT `transactieFK1` FOREIGN KEY(`OrderID`) REFERENCES `giftit`.`order` (`OrderID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     CONSTRAINT `transactieFK2` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
