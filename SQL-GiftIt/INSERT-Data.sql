@@ -11,10 +11,10 @@ INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL,
 INSERT INTO `categorie` (`CategorieID`, `Naam`, `SubCategorieVan`) VALUES (NULL, 'Woonkamer', 1);
 
 /* INSERT `booking` */
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', NULL, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', NULL, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', NULL, 052821, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', NULL, 124913, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 1, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 2, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 3, 052821, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikerID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 4, 124913, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
 
 /* INSERT data `pakketvolgnr` */
 CALL `insert_pakketvolgnr` (05118987073542,"DHL","Next day",1);
