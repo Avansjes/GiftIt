@@ -51,6 +51,6 @@ FOR EACH ROW
 
 BEGIN
 	INSERT INTO `giftit`.`transactie` VALUES (
-        null, new.OrderID, new.AdvID, new.GebruikersID, new.StatusOrder, new.StatusOrder, new.PersoneelsID);
+        null, new.OrderID, new.AdvID, new.GebruikersID, new.StatusOrder, new.StatusOrder);
 END
 //
