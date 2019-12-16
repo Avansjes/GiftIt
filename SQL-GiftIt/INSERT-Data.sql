@@ -41,10 +41,10 @@ INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID
 INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID`, `Titel`, `Inhoud`, `Staat`, `VerzendKosten`, `StatusProduct`) VALUES (10, '2018/12-24', 4, 10, "Plus size dames tuniek", "Deze soepelvallende tuniek van puur polyester heeft korte of 3/4-mouwen en een ronde hals, maatje L",1, 6.50, "Zo goed als nieuw");
 
 /* INSERT `booking` */
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 1, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 2, 232143, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 3, 052821, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 4, 124913, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 1, 2, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 2, 3, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 3, 4, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 4, 5, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
 
 /* INSERT data `pakketvolgnr` */
 CALL `insert_pakketvolgnr` (05118987073542,'UPS','EXPRESS',1);
