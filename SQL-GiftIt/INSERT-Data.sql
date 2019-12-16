@@ -40,6 +40,14 @@ INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID
 INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID`, `Titel`, `Inhoud`, `Staat`, `VerzendKosten`, `StatusProduct`) VALUES (9, '2018/11/22', 1, 21, "Oude postzegels", "Oude postzegels. Ik hoef ze niet meer.",1, 4.95, "Gebruikt");
 INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID`, `Titel`, `Inhoud`, `Staat`, `VerzendKosten`, `StatusProduct`) VALUES (10, '2018/12-24', 4, 10, "Plus size dames tuniek", "Deze soepelvallende tuniek van puur polyester heeft korte of 3/4-mouwen en een ronde hals, maatje L",1, 6.50, "Zo goed als nieuw");
 
+/* Voorbeeld Insert statements tabel vervoerder */
+INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EXPRESS-PLUS','Zending wordt volgende werkdag voor 9 uur aangeboden', 'www.tnt.nl');
+INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EXPRESS','Zending wordt volgende werkdag voor 12 uur aangeboden', 'www.tnt.nl');
+INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EOB','Zending wordt volgende werkdag voor einde werkdag aangeboden', 'www.tnt.nl');
+INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EXPRESS-PLUS','Zending wordt volgende werkdag voor 9 uur aangeboden', 'www.ups.com');
+INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EXPRESS','Zending wordt volgende werkdag voor 12 uur aangeboden', 'www.ups.com');
+INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EOB','Zending wordt volgende werkdag voor einde werkdag aangeboden', 'www.ups.com');
+
 /* INSERT `booking` */
 INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (1, 'TNT', 'EXPRESS-PLUS', 1, 2, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
 INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (2, 'TNT', 'EXPRESS-PLUS', 2, 3, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
@@ -57,20 +65,6 @@ CALL `insert_pakketvolgnr` (05118987073542,'UPS','EXPRESS',1);
 CALL `insert_pakketvolgnr` (05118987073543,'TNT','EXPRESS',2);
 CALL `insert_pakketvolgnr` (05118987073544,'UPS','EXPRESS',3);
 CALL `insert_pakketvolgnr` (05118987073545,'UPS','EXPRESS',4);
-CALL `insert_pakketvolgnr` (05118987073546,'UPS','EXPRESS',5);
-CALL `insert_pakketvolgnr` (05118987073547,'TNT','EXPRESS',6);
-CALL `insert_pakketvolgnr` (05118987073548,'UPS','EXPRESS',7);
-CALL `insert_pakketvolgnr` (05118987073549,'UPS','EXPRESS',8);
-CALL `insert_pakketvolgnr` (05118987073551,'TNT','EXPRESS',9);
-CALL `insert_pakketvolgnr` (05118987073552,'UPS','EXPRESS',10);
-
-/* Voorbeeld Insert statements tabel vervoerder */
-INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EXPRESS-PLUS','Zending wordt volgende werkdag voor 9 uur aangeboden', 'www.tnt.nl');
-INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EXPRESS','Zending wordt volgende werkdag voor 12 uur aangeboden', 'www.tnt.nl');
-INSERT INTO `giftit`.`vervoerder` VALUES ('TNT', 'EOB','Zending wordt volgende werkdag voor einde werkdag aangeboden', 'www.tnt.nl');
-INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EXPRESS-PLUS','Zending wordt volgende werkdag voor 9 uur aangeboden', 'www.ups.com');
-INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EXPRESS','Zending wordt volgende werkdag voor 12 uur aangeboden', 'www.ups.com');
-INSERT INTO `giftit`.`vervoerder` VALUES ('UPS', 'EOB','Zending wordt volgende werkdag voor einde werkdag aangeboden', 'www.ups.com');
 
 /* Voorbeeld Insert middels stored procedure tabel vervoerder */
 call `insertVervoerder` ('FEDEX','EXPRESS', @restultaat1,@restultaat2,@restultaat3,@restultaat4);
