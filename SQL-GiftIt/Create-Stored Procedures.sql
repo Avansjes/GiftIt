@@ -66,3 +66,18 @@ BEGIN
 		null, new.OrderID, new.AdvID, new.GebruikersID, new.StatusOrder, new.StatusOrder);
 END
 //
+
+/* Geeft bovenliggende categorieen van een categorie. */
+CREATE OR REPLACE PROCEDURE `GetParentCategories` (IN `CatId` INT(6)) 
+WITH RECURSIVE cte (CategorieID, Naam, SubCategorieVan) AS
+(
+  SELECT CategorieID, Naam, SubCategorieVan
+  FROM categorie c1
+  WHERE CategorieID = CatId
+  UNION ALL
+  SELECT c2.CategorieID, c2.Naam, c2.SubCategorieVan 
+  FROM cte
+    INNER JOIN categorie c2
+  WHERE cte.SubCategorieVan = c2.CategorieID
+)
+SELECT * FROM cte WHERE CategorieID <> CatId;
