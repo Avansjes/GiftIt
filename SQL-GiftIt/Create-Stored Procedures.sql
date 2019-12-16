@@ -12,7 +12,6 @@ BEGIN
 	`Vervoerder`,
 	`ServiceLevel`,
 	`OrderID`) VALUES (
-	NULL,
 	`par_TrackingNO`,
 	`par_Vervoerder`,
 	`par_ServiceLevel`,
