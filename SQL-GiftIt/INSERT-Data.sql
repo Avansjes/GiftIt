@@ -41,10 +41,16 @@ INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID
 INSERT INTO `advertentie` (`AdvID`, `AanmaakDatum`, `GebruikersID`, `CategorieID`, `Titel`, `Inhoud`, `Staat`, `VerzendKosten`, `StatusProduct`) VALUES (10, '2018/12-24', 4, 10, "Plus size dames tuniek", "Deze soepelvallende tuniek van puur polyester heeft korte of 3/4-mouwen en een ronde hals, maatje L",1, 6.50, "Zo goed als nieuw");
 
 /* INSERT `booking` */
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 1, 2, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 2, 3, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 3, 4, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
-INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (NULL, 'TNT', 'EXPRESS-PLUS', 4, 5, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (1, 'TNT', 'EXPRESS-PLUS', 1, 2, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (2, 'TNT', 'EXPRESS-PLUS', 2, 3, 'Markt', '6', '3221AA', 'Amsterdam', 'Nederland');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (3, 'TNT', 'EXPRESS-PLUS', 3, 4, 'Vrijstraat', '28A', '3727MK', 'Etten-Leur', 'Nederlands');
+INSERT INTO `booking` (`BookingID`, `Vervoerder`, `ServiceLevel`, `AdvID`, `GebruikersID`, `Straat`, `Huisnummer`, `Postcode`, `Stad`, `Land`) VALUES (4, 'TNT', 'EXPRESS-PLUS', 4, 5, 'Kerkstraat', '21', '1234DE', 'Schiedam', 'Nederland');
+
+/* INSERT data orders*/
+INSERT INTO `order` (`OrderID`, `AdvID`, `GebruikersID`, `StatusOrder`, `Vervoerder`, `ServiceLevel`, `BookingID`) VALUES (1, 10, 3, 'Aangemaakt', 'TNT','EXPRESS-PLUS',1);
+INSERT INTO `order` (`OrderID`, `AdvID`, `GebruikersID`, `StatusOrder`, `Vervoerder`, `ServiceLevel`, `BookingID`) VALUES (2, 9, 3, 'Aangemaakt', 'TNT','EXPRESS-PLUS',2);
+INSERT INTO `order` (`OrderID`, `AdvID`, `GebruikersID`, `StatusOrder`, `Vervoerder`, `ServiceLevel`, `BookingID`) VALUES (3, 8, 4, 'Bezorger is onderweg', 'TNT','EXPRESS-PLUS',3);
+INSERT INTO `order` (`OrderID`, `AdvID`, `GebruikersID`, `StatusOrder`, `Vervoerder`, `ServiceLevel`, `BookingID`) VALUES (4, 7, 5, 'Bij bestemming aangekomen', 'TNT','EXPRESS-PLUS',4);
 
 /* INSERT data `pakketvolgnr` */
 CALL `insert_pakketvolgnr` (05118987073542,'UPS','EXPRESS',1);
