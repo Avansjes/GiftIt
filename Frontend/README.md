@@ -1,7 +1,7 @@
 # Registratie & login pagina
 
 #### Hoe te gebruiken:
-Dit is een rudimentaire login en registratiepagina voor de GiftIt database. Hij is gemaakt voor XAMPP, en kan op de localhost getest worden: 
+Dit is een rudimentaire login en registratiepagina voor de GiftIt database. Hiermee kunnen nieuwe gebruikers worden aangemaakt in de GiftIt database, ook kan je inloggen met gebruikers die al bestaan. Hij is gemaakt voor XAMPP, en kan op de localhost getest worden: 
 
 Na het aanzetten van XAMPP en het aanmaken van de GiftIt database plaats je deze bestanden in X:\XAMPP\htdocs\giftit, waarna ze te testen zijn via dit adres: http://localhost/giftit/login.php
 
