@@ -6,7 +6,7 @@ Dit is een rudimentaire login en registratiepagina voor de GiftIt database. Hier
 Na het aanzetten van XAMPP en het aanmaken van de GiftIt database plaats je deze bestanden in X:\XAMPP\htdocs\giftit, waarna ze te testen zijn via dit adres: http://localhost/giftit/login.php
 
 #### Let op:
-Ik heb de meeste NOT NULL eigenschappen van de user registry (in de SQL) uit gezet zodat registreren (en testen) sneller gaat. 
+Ik heb de meeste NOT NULL eigenschappen van de user registry (in de SQL) uit gezet zodat registreren (en testen) sneller gaat. Op het moment zijn alleen de gebruikersnaam, e-mail, en wachtwoord verplicht.
 
 #### To-do:
 - Beveiliging tegen SQL injection
