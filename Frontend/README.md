@@ -1,4 +1,4 @@
-# Registratie & login pagina's
+# Registratie & login pagina
 
 #### Hoe te gebruiken:
 Dit is een rudimentaire login en registratiepagina voor de GiftIt database. Hij is gemaakt voor XAMPP, en kan op de localhost getest worden: 
