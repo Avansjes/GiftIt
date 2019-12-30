@@ -8,6 +8,7 @@ CREATE TABLE `giftit`.`gebruiker` (
 	`GebruikersID`	INT(10)		NOT NULL AUTO_INCREMENT,
 	`Email`			VARCHAR(30)	NOT NULL,
 	`GebruikersNaam` VARCHAR(30) NOT NULL,
+	`WachtWoord`	VARCHAR(30)	NOT NULL,
 	`Voornaam`		VARCHAR(25)	NOT NULL,
 	`Achternaam`	VARCHAR(25)	NOT NULL,
 	`Straat`		VARCHAR(50)	NOT NULL,
