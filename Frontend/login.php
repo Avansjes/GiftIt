@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Login</title>
 <link rel="stylesheet" href="css/style.css" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <?php
@@ -33,14 +34,23 @@ and WachtWoord='$WachtWoord'";
  }
     }else{
 ?>
-<div class="form">
-<h1>Log In</h1>
-<form action="" method="post" name="login">
-<input type="text" name="GebruikersNaam" placeholder="Gebruikersnaam" required />
-<input type="password" name="WachtWoord" placeholder="Wachtwoord" required />
-<input name="submit" type="submit" value="Login" />
-</form>
-<p>Nog geen account? <a href='registration.php'>Maak er hier één aan.</a></p>
+<div class="login wrap" style="background-image: url(images/home-bg.png);">
+    <a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
+    <div class="search-container">
+        <form action="/action_page.php">
+            <input type="text" class="search" placeholder="Zoeken..." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+    <div class="form">
+        <h1>Log In</h1>
+        <form action="" class="login-forms" method="post" name="login">
+            <input type="text" name="GebruikersNaam" placeholder="Gebruikersnaam" required />
+            <input type="password" name="WachtWoord" placeholder="Wachtwoord" required />
+            <input name="submit" class="submit" type="submit" value="Login" />
+        </form>
+        <p>Nog geen account? <br><a href='registration.php'>Maak er hier één aan.</a></p>
+    </div>
 </div>
 <?php } ?>
 </body>

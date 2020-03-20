@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>Registratie</title>
 <link rel="stylesheet" href="css/style.css" />
+<meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
 <body>
 <?php
@@ -28,15 +29,18 @@ VALUES ('$GebruikersNaam', '$WachtWoord', '$Email', 'Gebruiker')";
         }
     }else{
 ?>
-<div class="form">
+<div class="register wrap" style="background-image: url(images/register-bg.png);">
+<a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
+<div class="form registratie">
 <h1>Registratie</h1>
 <form name="registration" action="" method="post">
-<input type="text" name="GebruikersNaam" placeholder="GebruikersNaam" required />
+<input type="text" name="GebruikersNaam" placeholder="Gebruikersnaam" required />
 <input type="email" name="Email" placeholder="Email" required />
-<input type="password" name="WachtWoord" placeholder="WachtWoord" required />
-<input type="submit" name="submit" value="Register" />
+<input type="password" name="WachtWoord" placeholder="Wachtwoord" required />
+<input type="submit" class="submit" name="submit" value="Register" />
 </form>
 </div>
 <?php } ?>
+</div>
 </body>
 </html>
