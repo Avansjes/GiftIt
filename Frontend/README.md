@@ -13,4 +13,3 @@ Ik heb de meeste NOT NULL eigenschappen van de user registry (in de SQL) uit gez
 - Wachtwoorden een md5 encryption geven (dit hadden ze in eerste instantie al, maar ik kreeg de code niet werkend totdat ik deze verwijderde)
 - Wachtwoord herhalen tijdens registratie, en deze wachtwoorden moeten identiek zijn aan elkaar
 - Accounts mogen geen gebruik maken van dezelfde username of e-mail adres
-- Styling
