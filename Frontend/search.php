@@ -4,6 +4,7 @@
 	require('db.php');
 	if(isset($_POST['search'])){
 		//When the user presses this button, we run a search query
+		//https://stackoverflow.com/questions/23584735/how-to-create-a-search-feature-with-php-and-mysql
 	}
 ?>
 <!DOCTYPE html>
@@ -24,8 +25,7 @@
 			</div>
 			<a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
 			<div class="form login">
-				<p>Welkom <?php echo $_SESSION['GebruikersNaam']; ?>!</p>
-				<p>Je bent nu ingelogd.</p>
+				<p>Zoekresultaten</p>
 			</div>
 		<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
 		<a href="logout.php" class="logout-button">Logout</a>
@@ -33,21 +33,30 @@
 		<div>
 			<div class="feed">
 				<?php
-					$query = "SELECT * FROM `advertentie`";
-					$result = mysqli_query($con,$query) or die(mysql_error());
-					while($row = $result->fetch_assoc()) { ?>
-					<div class="feed-body">
-						<div class="feed-container">
-							<div class="title">
-								<?php echo $row["Titel"]; ?>
+					if(isset($_GET['search'])){
+						$key=$_GET["search"]; //key=pattern to be searched
+						$query = "SELECT * FROM `advertentie` where `Inhoud` like '%$key%'";
+						$con=mysqli_connect("localhost","root","","giftit");
+						// Check connection
+						if (mysqli_connect_errno()) {
+							echo "Ik kon geen verbinding maken met de database. Foutmelding: " . mysqli_connect_error();
+						}
+						$result = mysqli_query($con,$query) or die(mysql_error());
+						while($row=mysqli_fetch_assoc($result)){?>
+							<div class="feed-body">
+								<div class="feed-container">
+									<div class="title">
+										<?php echo $row["Titel"]; ?>
+									</div>
+									<br/>
+									<div class="feed-data">
+										<span><?php echo $row["Inhoud"]; ?></span>
+									</div>
+								</div>
 							</div>
-							<br/>
-							<div class="feed-data">
-								<span><?php echo $row["Inhoud"]; ?></span>
-							</div>
-						</div>
-					</div>
-					<?php }
+						<?php
+						}
+					}
 				?>
 			</div>
 		</div>
