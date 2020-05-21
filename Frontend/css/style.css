@@ -1,154 +1,216 @@
 body {
-    font-family:Arial, Sans-Serif;
-    margin: 0px;
+	font-family:Arial, Sans-Serif;
+	margin: 0px;
 }
+
 .clearfix:before, .clearfix:after{
-    content: "";
-    display: table;
+	content: "";
+	display: table;
 }
+
 .clearfix:after{
-    clear: both;
+	clear: both;
 }
+
 a{
-    color:#0067ab;
-    text-decoration:none;
+	color:#0067ab;
+	text-decoration:none;
 }
+
 a:hover{
-    text-decoration:underline;
+	text-decoration:underline;
 }
+
 h1 {
-    color: #68ac78;
+	color: #68ac78;
 }
+
 p {
-    line-height: 25px;
+	line-height: 25px;
 }
+
 .wrap {
-    background-image: url(images/home-bg.png);
-    background-repeat: no-repeat;
-    height: 560px;
+	background-image: url(images/home-bg.png);
+	background-repeat: no-repeat;
+	height: 560px;
 }
+
 .search {
-    margin: 0 auto;
-    width: 80%;
-    display: block;
+	margin: 0 auto;
+	width: 80%;
+	display: block;
 }
+
 .search-container input, search-container button {
-    float: left;
+	float: left;
 }
+
 .search-container form {
-    width: 50%;
-    display: block;
-    margin: 0 auto;
+	width: 50%;
+	display: block;
+	margin: 0 auto;
 }
+
 .search-container button {
-    height: 38px;
-    width: 40px;
-    margin-top: 10px;
-    display: none;
+	height: 38px;
+	width: 40px;
+	margin-top: 10px;
+	display: none;
 }
+
 .form{
-    width: 300px;
-    margin: 0 auto;
-    padding-top: 150px;
+	width: 300px;
+	margin: 0 auto;
+	padding-top: 150px;
 }
+
 .form.registratie {
-    margin: 0 auto;
-    width: 195px;
+	margin: 0 auto;
+	width: 195px;
 }
+
 .form.registratie h1 {
-    text-align: center;
+	text-align: center;
 }
+
 .registratie .submit {
-    margin-left: 38px;
+	margin-left: 38px;
 }
+
 .logo {
-    height: 60px;
-    width: 100px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    left: 10px;
-    top: 10px;
-    position: fixed;
+	height: 60px;
+	width: 100px;
+	background-size: contain;
+	background-repeat: no-repeat;
+	left: 10px;
+	top: 10px;
+	position: absolute;
 }
+
 .login-forms input {
-    width: 200px;
+	width: 200px;
 }
+
 .index.wrap {
-    position: relative;
+	position: relative;
 }
+
 .index input[type='submit'] {
-    display: block;
-    margin: 0 auto;
-    margin-top: 200px;
+	display: block;
+	margin: 0 auto;
+	margin-top: 200px;
 }
+
 input[type='text'], input[type='email'], input[type='password'] {
-     border-radius: 2px;
-     border: 1px solid #CCC;
-     padding: 10px;
-     color: #333;
-     font-size: 14px;
-     margin-top: 10px;
+	border-radius: 2px;
+	border: 1px solid #CCC;
+	padding: 10px;
+	color: #333;
+	font-size: 14px;
+	margin-top: 10px;
 }
+
 input[type='submit']{
-    width: unset; 
-    padding: 10px 25px 8px;
-    color: #fff;
-    background-color: #68ac78;
-    text-shadow: rgba(0,0,0,0.24) 0 1px 0;
-    font-size: 16px;
-    box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#929292 0 1px 0 0;
-    border: 1px solid #68ac78;
-    border-radius: 5px;
-    margin-top: 10px;
-    cursor:pointer;
+	width: unset;
+	padding: 10px 25px 8px;
+	color: #fff;
+	background-color: #68ac78;
+	text-shadow: rgba(0,0,0,0.24) 0 1px 0;
+	font-size: 16px;
+	box-shadow: rgba(255,255,255,0.24) 0 2px 0 0 inset,#929292 0 1px 0 0;
+	border: 1px solid #68ac78;
+	border-radius: 5px;
+	margin-top: 10px;
+	cursor:pointer;
 }
+
+.logout-button {
+	padding: 8px 12px;
+	color: #fff;
+	background-color: #68ac78;
+	border-radius: 5px;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
 input[type='submit']:hover {
-     background-color: #024978;
+	background-color: #024978;
+}
+
+.feed {
+	width: 100%;
+}
+
+.feed .feed-body {
+	float: left;
+	height: 140px;
+}
+
+.feed .feed-body .feed-container {
+	padding: 15px 30px;
 }
 
 @media only screen and (min-width: 901px) {
-    .wrap {
-        background-position: right top;
-    }
-    .form {
-        margin-left: 200px;
-    }
+	.wrap {
+		background-position: right top;
+	}
+	.form {
+		margin-left: 200px;
+	}
+	.feed .feed-body {
+		width: 25%;
+	}
 }
 
 @media only screen and (max-width: 900px) {
-    .wrap {
-        background-position: 60% top;
-    }
-    .form {
-        margin-left: 100px;
-    }
+	.wrap {
+		background-position: 60% top;
+	}
+	.form {
+		margin-left: 100px;
+	}
+	.feed .feed-body {
+		width: 33%;
+	}
+}
+
+@media only screen and (min-width: 481px) and (max-width: 700px){
+	.feed .feed-body {
+		width: 50%;
+	}
 }
 
 @media only screen and (min-width: 481px) {
-    p br {
-        display: none;
-    }
+	p br {
+		display: none;
+	}
 }
 
 @media only screen and (max-width: 480px) {
-    .wrap {
-        background-position: 70% top;
-    }
-    .search-container {
-        display: none;
-    }
-    .form {
-        width: 220px;
-        margin: 0 auto;
-    }
-    .form h1, .form p, .form a {
-        display: block;
-        text-align: center;
-    }
-    .form .submit {
-        margin-left: 60px;
-    }
-    p br {
-        display: inline;
-    }
+	.wrap {
+		background-position: 70% top;
+	}
+	.search-container {
+		display: none;
+	}
+	.feed .feed-body {
+		width: 100%;
+	}
+	.form {
+		width: 220px;
+		margin: 0 auto;
+	}
+	.form h1, .form p, .form a {
+		display: block;
+		text-align: center;
+	}
+	.form .submit {
+		margin-left: 60px;
+	}
+	p br {
+		display: inline;
+	}
 }
