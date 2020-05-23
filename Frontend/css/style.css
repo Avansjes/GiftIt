@@ -1,3 +1,7 @@
+body, html {
+	height: 100%;
+}
+
 body {
 	font-family:Arial, Sans-Serif;
 	margin: 0px;
@@ -101,13 +105,14 @@ p {
 	margin-top: 200px;
 }
 
-input[type='text'], input[type='email'], input[type='password'] {
+input[type='text'], input[type='email'], input[type='password'], .submit .new-submission select {
 	border-radius: 2px;
 	border: 1px solid #CCC;
 	padding: 10px;
 	color: #333;
 	font-size: 14px;
 	margin-top: 10px;
+	width: 100%;
 }
 
 input[type='submit']{
@@ -151,6 +156,38 @@ input[type='submit']:hover {
 
 .feed .feed-body .feed-container {
 	padding: 15px 30px;
+}
+
+.submit.wrap {
+	height: 100%;
+	background-size: cover;
+}
+
+.submit .submission {
+	width: 60%;
+	margin: 0 auto;
+	padding-top: 150px;
+}
+
+.submit .new-submission {
+	background-color: white;
+}
+
+.submit .new-submission .button {
+	width: 100%;
+}
+
+.submit .new-submission .submit {
+	margin: 0 auto;
+	display: block;
+}
+
+.submit .new-submission textarea {
+	width: 100%;
+	height: 100px;
+	padding: 10px;
+	font-family: 'Arial', sans-serif;
+	font-size: 14px;
 }
 
 @media only screen and (min-width: 901px) {
