@@ -19,7 +19,7 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 #### To Do:
 - E-mail verificatie
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
-- Afbeeldingen vanaf de database in de browser tonen
+- Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
 
 #### Done:
 - Nieuwe account registratie
