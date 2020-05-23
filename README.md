@@ -20,6 +20,7 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 
 #### To Do:
 - E-mail verificatie
+- Toon persoonlijke informatie plaatsers advertenties
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
 - Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
 
@@ -27,9 +28,12 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 - Nieuwe account registratie
 - Inlog (& uitlog)
 - Werkende zoekfunctie
-- Plaatsen nieuwe advertenties van gebruikers
+- Plaatsen nieuwe advertenties van ingelogde gebruikers
 
 #### Nice to have:
 - Submit pagina verplaatsen naar een pop-up in index.php
+- Namen categorieën tonen
+- Advertenties selecteren via categorieën
+- Details over advertentie inzien
 - De welkomsttekst op index.php niet meer tonen als de gebruiker terug komt op index.php na submitten
 - Betere styling
