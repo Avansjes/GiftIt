@@ -15,3 +15,19 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
     1. Full-DB-and-TABLES.sql
     2. Create-Stored Procedures.sql
     3. INSERT-Data.sql
+
+#### To Do:
+- E-mail verificatie
+- Afbeeldingen lokaal vanaf de computer uploaden naar de database
+- Afbeeldingen vanaf de database in de browser tonen
+
+#### Done:
+- Nieuwe account registratie
+- Inlog (& uitlog)
+- Werkende zoekfunctie
+- Plaatsen nieuwe advertenties van gebruikers
+
+#### Nice to have:
+- Submit pagina verplaatsen naar een pop-up in index.php
+- De welkomsttekst op index.php niet meer tonen als de gebruiker terug komt op index.php na submitten
+- Betere styling
