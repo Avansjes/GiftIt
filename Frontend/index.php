@@ -27,8 +27,10 @@
 				<p>Welkom <?php echo $_SESSION['GebruikersNaam']; ?>!</p>
 				<p>Je bent nu ingelogd.</p>
 			</div>
-		<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
-		<a href="logout.php" class="logout-button">Logout</a>
+			<a href="submit.php">
+				<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
+			</a>
+			<a href="logout.php" class="logout-button">Logout</a>
 		</div>
 		<div>
 			<div class="feed">
