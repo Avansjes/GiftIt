@@ -25,9 +25,13 @@
 			</div>
 			<a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
 			<div class="form login">
-				<p>Zoekresultaten</p>
+				<p>Zoekresultaten voor <?php echo $_GET["search"]; ?></p>
 			</div>
 		<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
+		<div class="lang">
+			<a href="#" onclick="setLang_nl()" id="nl" class="language nl"><img src="images/nl.png"/></a>
+			<a href="#" onclick="setLang_en()" id="en" class="language en"><img src="images/en.png"/></a>
+		</div>
 		<a href="logout.php" class="logout-button">Logout</a>
 		</div>
 		<div>

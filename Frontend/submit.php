@@ -31,6 +31,8 @@
 			$Titel = mysqli_real_escape_string($con,$Titel);
 			$Inhoud = stripslashes($_POST['Inhoud']);
 			$Inhoud = mysqli_real_escape_string($con,$Inhoud);
+			//Page referenced for image uploading: https://www.geeksforgeeks.org/how-to-upload-image-into-database-and-display-it-using-php/
+			//Page referenced for storing image in BLOB: https://phppot.com/php/mysql-blob-using-php/
 			$StatusProduct = stripslashes($_POST['StatusProduct']);
 			$StatusProduct = mysqli_real_escape_string($con,$StatusProduct);
 			$CategorieID = stripslashes($_POST['CategorieID']);
@@ -49,6 +51,10 @@
 					<input type="text" class="search" placeholder="Zoeken..." name="search">
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
+			</div>
+			<div class="lang">
+				<a href="#" onclick="setLang_nl()" id="nl" class="language nl"><img src="images/nl.png"/></a>
+				<a href="#" onclick="setLang_en()" id="en" class="language en"><img src="images/en.png"/></a>
 			</div>
 			<a href="logout.php" class="logout-button">Logout</a>
 			<a href="index.php">

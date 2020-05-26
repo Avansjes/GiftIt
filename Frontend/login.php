@@ -38,6 +38,10 @@
 				}else{
 			?>
 			<div class="login wrap" style="background-image: url(images/home-bg.png);">
+				<div class="lang">
+					<a href="#" onclick="setLang_nl()" id="nl" class="language nl"><img src="images/nl.png"/></a>
+					<a href="#" onclick="setLang_en()" id="en" class="language en"><img src="images/en.png"/></a>
+				</div>
 				<a href="index.php">
 					<div class="logo" style="background-image: url(images/logo-groen.png);"></div>
 				</a>

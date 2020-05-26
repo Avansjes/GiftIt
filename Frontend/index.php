@@ -30,6 +30,10 @@
 			<a href="submit.php">
 				<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
 			</a>
+			<div class="lang">
+				<a href="#" onclick="setLang_nl()" id="nl" class="language nl"><img src="images/nl.png"/></a>
+				<a href="#" onclick="setLang_en()" id="en" class="language en"><img src="images/en.png"/></a>
+			</div>
 			<a href="logout.php" class="logout-button">Logout</a>
 		</div>
 		<div>
