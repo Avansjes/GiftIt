@@ -20,7 +20,7 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 
 #### To Do:
 - Search queries opslaan in database
-- Alléén search queries opslaan in database als er 0 resultaten voor zijn
+  - Alléén search queries opslaan in database als er 0 resultaten voor zijn
 - Multi-language support (NL+EN)
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
 - Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
