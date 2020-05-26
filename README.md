@@ -19,10 +19,12 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 ## Voortgang
 
 #### To Do:
-- E-mail verificatie
-- Toon persoonlijke informatie plaatsers advertenties
+- Search queries opslaan in database
+- Alléén search queries opslaan in database als er 0 resultaten voor zijn
+- Multi-language support (NL+EN)
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
 - Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
+- Implementatie responsformulier voor gebruiker waarmee gegevens kunnen worden opgevraagd
 
 #### Done:
 - Nieuwe account registratie
@@ -31,6 +33,8 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 - Plaatsen nieuwe advertenties van ingelogde gebruikers
 
 #### Nice to have:
+- E-mail verificatie
+- Toon persoonlijke informatie plaatsers advertenties
 - Submit pagina verplaatsen naar een pop-up in index.php
 - Namen categorieën tonen
 - Advertenties selecteren via categorieën
