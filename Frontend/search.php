@@ -14,6 +14,7 @@
 		<title>GiftIt</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script src="js/lang.js"></script>
 	</head>
 	<body>
 		<div class="index wrap" style="background-image: url(images/home-bg.png);">

@@ -5,6 +5,7 @@
 		<title>Registratie</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script src="js/lang.js"></script>
 	</head>
 	<body>
 	<?php
@@ -30,13 +31,24 @@
 		}else{
 		?>
 		<div class="register wrap" style="background-image: url(images/register-bg.png);">
+			<div class="lang">
+				<a href="#" onclick="setLang_nl()" id="nl" class="language nl"><img src="images/nl.png"/></a>
+				<a href="#" onclick="setLang_en()" id="en" class="language en"><img src="images/en.png"/></a>
+			</div>
 			<a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
 			<div class="form registratie">
-				<h1>Registratie</h1>
-				<form name="registration" action="" method="post">
+				<h1 lang="nl">Registratie</h1>
+				<h1 lang="en">Registration</h1>
+				<form lang="nl" name="registration" action="" method="post">
 					<input type="text" name="GebruikersNaam" placeholder="Gebruikersnaam" required />
 					<input type="email" name="Email" placeholder="Email" required />
 					<input type="password" name="WachtWoord" placeholder="Wachtwoord" required />
+					<input type="submit" class="submit" name="submit" value="Register" />
+				</form>
+				<form lang="en" name="registration" action="" method="post">
+					<input type="text" name="GebruikersNaam" placeholder="Username" required />
+					<input type="email" name="Email" placeholder="E-mail" required />
+					<input type="password" name="WachtWoord" placeholder="Password" required />
 					<input type="submit" class="submit" name="submit" value="Register" />
 				</form>
 			</div>

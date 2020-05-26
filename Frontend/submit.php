@@ -13,6 +13,7 @@
 		<title>GiftIt</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script src="js/lang.js"></script>
 	</head>
 	<body>
 	<?php
@@ -48,7 +49,8 @@
 		<div class="submit wrap" style="background-image: url(images/register-bg.png);">
 			<div class="search-container">
 				<form action="search.php">
-					<input type="text" class="search" placeholder="Zoeken..." name="search">
+					<input lang="nl" type="text" class="search" placeholder="Zoeken..." name="search">
+					<input lang="en" type="text" class="search" placeholder="Search..." name="search">
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
@@ -62,7 +64,7 @@
 			</a>
 			<div class="submission">
 				<div class="new-submission">
-					<form name="new-submission" action="" method="post">
+					<form lang="nl" name="new-submission" action="" method="post">
 						<input type="text" name="Titel" placeholder="Plaats de titel hier" required />
 						<textarea name="Inhoud" placeholder="Plaats een beschrijving hier" required></textarea>
 						<input type="text" name="Foto" placeholder="Upload een foto" required />
@@ -89,9 +91,53 @@
 							<option value="13">Babyspeelgoed</option>
 							<option value="14">Baby kleding</option>
 							<option value="15">Boeken</option>
+							<option value="16">Hobby en vrije tijd</option>
+							<option value="17">Sieraden</option>
+							<option value="18">Electronica</option>
+							<option value="19">Games en consoles</option>
+							<option value="20">Muziekinstrumenten</option>
+							<option value="21">Verzamelen</option>
 						</select>
 						<div class="button">
 							<input type="submit" class="submit" name="submit" value="Plaats advertentie" />
+						</div>
+					</form>
+					<form lang="en" name="new-submission" action="" method="post">
+						<input type="text" name="Titel" placeholder="Place the title here" required />
+						<textarea name="Inhoud" placeholder="Place a description here" required></textarea>
+						<input type="text" name="Foto" placeholder="Upload a picture" required />
+						<label for="StatusProduct">Select the condition of the product:</label>
+						<select name="StatusProduct">
+							<option value="Nieuw">New</option>
+							<option value="Zo goed als nieuw">As good as new</option>
+							<option value="Gebruikt">Used</option>
+						</select>
+						<label for="CategorieID">Select the category the ad will be placed in:</label>
+						<select name="CategorieID">
+							<option value="1">Home appliance</option>
+							<option value="2">Living room</option>
+							<option value="3">Bathroom</option>
+							<option value="4">Bedroom</option>
+							<option value="5">Lamps</option>
+							<option value="6">Living accessories</option>
+							<option value="7">Art</option>
+							<option value="8">Clothing</option>
+							<option value="9">Men's clothing</option>
+							<option value="10">Women's clothing</option>
+							<option value="11">Children's clothing</option>
+							<option value="12">For the baby</option>
+							<option value="13">Baby toys</option>
+							<option value="14">Baby clothing</option>
+							<option value="15">Books</option>
+							<option value="16">Hobby and leisure</option>
+							<option value="17">Jewelry</option>
+							<option value="18">Electronics</option>
+							<option value="19">Games and consoles</option>
+							<option value="20">Musical instruments</option>
+							<option value="21">Collectibles</option>
+						</select>
+						<div class="button">
+							<input type="submit" class="submit" name="submit" value="Place the ad" />
 						</div>
 					</form>
 				</div>

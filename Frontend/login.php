@@ -5,6 +5,7 @@
 		<title>Login</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<script src="js/lang.js"></script>
 	</head>
 	<body>
 		<?php
@@ -54,13 +55,20 @@
 					</form>
 				</div>
 				<div class="form">
-					<h1>Log In</h1>
-					<form action="" class="login-forms" method="post" name="login">
+					<h1 lang="nl">Log In</h1>
+					<h1 lang="en">Login</h1>
+					<form lang="nl" action="" class="login-forms" method="post" name="login">
 						<input type="text" name="GebruikersNaam" placeholder="Gebruikersnaam" required />
 						<input type="password" name="WachtWoord" placeholder="Wachtwoord" required />
 						<input name="submit" class="submit" type="submit" value="Login" />
 					</form>
-					<p>Nog geen account? <br><a href='registration.php'>Maak er hier één aan.</a></p>
+					<form lang="en" action="" class="login-forms" method="post" name="login">
+						<input type="text" name="GebruikersNaam" placeholder="Username" required />
+						<input type="password" name="WachtWoord" placeholder="Password" required />
+						<input name="submit" class="submit" type="submit" value="Login" />
+					</form>
+					<p lang="nl">Nog geen account? <br><a href='registration.php'>Maak er hier één aan.</a></p>
+					<p lang="en">Not yet registered? <br><a href='registration.php'>You can do so here.</a></p>
 				</div>
 			</div>
 		<?php } ?>
