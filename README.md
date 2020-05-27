@@ -24,7 +24,6 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
 - Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
 - Implementatie responsformulier voor gebruiker waarmee gegevens kunnen worden opgevraagd
-- Taalkeuze opslaan (op het moment switcht hij terug naar Nederlands elke keer als een nieuwe pagina wordt geopend)
 
 #### Done:
 - Nieuwe account registratie
