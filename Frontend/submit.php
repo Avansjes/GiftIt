@@ -48,8 +48,11 @@
 		?>
 		<div class="submit wrap" style="background-image: url(images/register-bg.png);">
 			<div class="search-container">
-				<form action="search.php">
+				<form action="search.php" lang="nl">
 					<input lang="nl" type="text" class="search" placeholder="Zoeken..." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+				<form action="search.php" lang="en">
 					<input lang="en" type="text" class="search" placeholder="Search..." name="search">
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>

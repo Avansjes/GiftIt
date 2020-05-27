@@ -47,11 +47,13 @@
 					<div class="logo" style="background-image: url(images/logo-groen.png);"></div>
 				</a>
 				<div class="search-container">
-					<form action="search.php">
-						<input type="text" class="search" placeholder="Zoeken..." name="search">
-						<button type="submit">
-							<i class="fa fa-search"></i>
-						</button>
+					<form action="search.php" lang="nl">
+						<input lang="nl" type="text" class="search" placeholder="Zoeken..." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
+					</form>
+					<form action="search.php" lang="en">
+						<input lang="en" type="text" class="search" placeholder="Search..." name="search">
+						<button type="submit"><i class="fa fa-search"></i></button>
 					</form>
 				</div>
 				<div class="form">

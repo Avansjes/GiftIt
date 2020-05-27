@@ -19,14 +19,19 @@
 	<body>
 		<div class="index wrap" style="background-image: url(images/home-bg.png);">
 			<div class="search-container">
-				<form action="search.php">
-					<input type="text" class="search" placeholder="Zoeken..." name="search">
+				<form action="search.php" lang="nl">
+					<input lang="nl" type="text" class="search" placeholder="Zoeken..." name="search">
+					<button type="submit"><i class="fa fa-search"></i></button>
+				</form>
+				<form action="search.php" lang="en">
+					<input lang="en" type="text" class="search" placeholder="Search..." name="search">
 					<button type="submit"><i class="fa fa-search"></i></button>
 				</form>
 			</div>
 			<a href="index.php"><div class="logo" style="background-image: url(images/logo-groen.png);"></div></a>
 			<div class="form login">
-				<p>Zoekresultaten voor <?php echo $_GET["search"]; ?></p>
+				<p lang="nl">Zoekresultaten voor <?php echo $_GET["search"]; ?></p>
+				<p lang="en">Search results for <?php echo $_GET["search"]; ?></p>
 			</div>
 		<input type="submit" class="giftbtn" name="gift" value="Plaats een gift!">
 		<div class="lang">
