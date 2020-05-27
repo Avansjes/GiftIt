@@ -18,6 +18,8 @@ window.onload = function() {
 }
 
 function setLang_en() {
+	document.getElementById("en").style.opacity = "1";
+	document.getElementById("nl").style.opacity = "0.3";
 	var en = document.querySelectorAll('[lang="nl"]'),
 		i = 0,
 		l = en.length;
@@ -34,6 +36,8 @@ function setLang_en() {
 }
 
 function setLang_nl() {
+	document.getElementById("en").style.opacity = "0.3";
+	document.getElementById("nl").style.opacity = "1";
 	var en = document.querySelectorAll('[lang="nl"]'),
 		i = 0,
 		l = en.length;
