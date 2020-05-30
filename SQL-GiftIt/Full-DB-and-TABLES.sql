@@ -38,6 +38,8 @@ CREATE TABLE `giftit`.`advertentie` (
 	`Titel`			TEXT(30)	NOT NULL,
 	`Inhoud`		TEXT(800)	NOT NULL,
 	`Staat`			BINARY(1)	NOT NULL,
+	`ImageID`		INT(10)		NOT NULL AUTO_INCREMENT,
+	`ImageData`		BLOB		NOT NULL,
 	`VerzendKosten` DECIMAL(8,2) DEFAULT '3.50',
 	`StatusProduct` VARCHAR(30)	DEFAULT 'Op zoek naar een nieuw thuis',
 	CONSTRAINT `advertentiePK` PRIMARY KEY(`AdvID`),
@@ -47,10 +49,10 @@ CREATE TABLE `giftit`.`advertentie` (
 
 /* Create Vervoerder tabel */
 CREATE TABLE `giftit`.`vervoerder` (
-`Vervoerder`		VARCHAR(35)	NOT NULL,
-`ServiceLevel`		VARCHAR(35)	NOT NULL,
-`Omschrijving`		VARCHAR(80)	NULL DEFAULT 'Omschrijving van de vervoerder-service level',
-`LinkVervoerder`	VARCHAR(50)	NOT NULL,
+	`Vervoerder`		VARCHAR(35)	NOT NULL,
+	`ServiceLevel`		VARCHAR(35)	NOT NULL,
+	`Omschrijving`		VARCHAR(80)	NULL DEFAULT 'Omschrijving van de vervoerder-service level',
+	`LinkVervoerder`	VARCHAR(50)	NOT NULL,
 CONSTRAINT `vervoerderPK` PRIMARY KEY (`Vervoerder`, `ServiceLevel`)
 );
 
@@ -112,6 +114,15 @@ CREATE TABLE `giftit`.`transactie` (
 	CONSTRAINT `transactieFK2` FOREIGN KEY(`AdvID`) REFERENCES `giftit`.`advertentie` (`AdvID`) ON DELETE NO ACTION ON UPDATE NO ACTION,
 	CONSTRAINT `transactieFK3` FOREIGN KEY(`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE NO ACTION ON UPDATE NO ACTION
 );
+
+/* Create Zoekopdrachten tabel */
+CREATE TABLE `giftit`.`zoekstring` (
+	`GebruikersID`	INT(10)		NOT NULL,
+	`ZoekOpdracht`	TEXT(100)	NULL,
+	`TijdZoeken`	DATETIME	NULL,
+	CONSTRAINT `zoekstringFK1` FOREIGN KEY (`GebruikersID`) REFERENCES `giftit`.`gebruiker` (`GebruikersID`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 
 /* Create view headline */
 CREATE OR REPLACE VIEW `giftit`.`headline` as select * from `giftit`.`advertentie` where `AanmaakDatum` < CURRENT_DATE - 14; 
