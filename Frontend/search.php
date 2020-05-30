@@ -44,14 +44,25 @@
 			<div class="feed">
 				<?php
 					if(isset($_GET['search'])){
-						$key=$_GET["search"]; //key=pattern to be searched
-						$query = "SELECT * FROM `advertentie` where `Inhoud` like '%$key%'";
 						$con=mysqli_connect("localhost","root","","giftit");
+						$key = $_GET["search"]; //key=pattern to be searched
+						$searchquery = "SELECT * FROM `advertentie` where `Inhoud` like '%$key%'";
+						//Definieer inhoud voor de opgeslagen zoekopdrachten
+						$TijdZoeken = date("Y-m-d H:i:s");
+						$GebruikersID = $_SESSION['GebruikersNaam'];
+						$sql = "SELECT `GebruikersID` FROM `gebruiker` WHERE `GebruikersNaam`='$GebruikersID'";
+						$foundID = mysqli_query($con,$sql);
+						while($r=mysqli_fetch_row($foundID))
+						$finalID = $r[0];
+						$savequery = "INSERT into `zoekstring` (GebruikersID, ZoekOpdracht, TijdZoeken)
+						VALUES ('$finalID', '$key', '$TijdZoeken')";
+						$saveresult = mysqli_query($con,$savequery);
+						//Einde inhoud tabel zoekopdrachten
 						// Check connection
 						if (mysqli_connect_errno()) {
 							echo "Ik kon geen verbinding maken met de database. Foutmelding: " . mysqli_connect_error();
 						}
-						$result = mysqli_query($con,$query) or die(mysql_error());
+						$result = mysqli_query($con,$searchquery) or die(mysql_error());
 						while($row=mysqli_fetch_assoc($result)){?>
 							<div class="feed-body">
 								<div class="feed-container">
