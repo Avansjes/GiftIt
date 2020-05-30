@@ -19,7 +19,6 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 ## Voortgang
 
 #### To Do:
-- Alléén search queries opslaan in database als er 0 resultaten voor zijn
 - Afbeeldingen lokaal vanaf de computer uploaden naar de database
 - Afbeeldingen vanaf de database in de browser tonen bij de bijgehorende advertentie
 - Implementatie responsformulier voor gebruiker waarmee gegevens kunnen worden opgevraagd
@@ -30,7 +29,7 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 - Werkende zoekfunctie
 - Plaatsen nieuwe advertenties van ingelogde gebruikers
 - Multi-language support (NL+EN)
-- Search queries opslaan in database
+- Search queries worden opgeslagen in de database als deze 0 zoekresultaten terug geeft
 
 #### Nice to have:
 - E-mail verificatie
