@@ -47,18 +47,7 @@
 						$con=mysqli_connect("localhost","root","","giftit");
 						$key = $_GET["search"]; //key=pattern to be searched
 						$searchquery = "SELECT * FROM `advertentie` where `Inhoud` like '%$key%'";
-						//Definieer inhoud voor de opgeslagen zoekopdrachten
-						$TijdZoeken = date("Y-m-d H:i:s");
-						$GebruikersID = $_SESSION['GebruikersNaam'];
-						$sql = "SELECT `GebruikersID` FROM `gebruiker` WHERE `GebruikersNaam`='$GebruikersID'";
-						$foundID = mysqli_query($con,$sql);
-						while($r=mysqli_fetch_row($foundID))
-						$finalID = $r[0];
-						$savequery = "INSERT into `zoekstring` (GebruikersID, ZoekOpdracht, TijdZoeken)
-						VALUES ('$finalID', '$key', '$TijdZoeken')";
-						$saveresult = mysqli_query($con,$savequery);
-						//Einde inhoud tabel zoekopdrachten
-						// Check connection
+						//Controleer verbinding
 						if (mysqli_connect_errno()) {
 							echo "Ik kon geen verbinding maken met de database. Foutmelding: " . mysqli_connect_error();
 						}
@@ -77,6 +66,22 @@
 							</div>
 						<?php
 						}
+						//Definieer inhoud voor de opgeslagen zoekopdrachten
+						$row_count = $result->num_rows;
+						//$result is een object met een aantal waardes (te vinden met print_r ($result)), één daarvan is num_rows, die het aantal zoekresultaten weer geeft. Zoeken op "jas" met de test database geeft een row van 2, "ring" geeft 1, "asdf" geeft 0.
+						//Deze code wordt alleen getriggerd als het aantal num_rows gelijk is aan 0. Met andere woorden, als er geen zoekresultaten zijn.
+						if ($row_count == 0) {
+							$TijdZoeken = date("Y-m-d H:i:s");
+							$GebruikersID = $_SESSION['GebruikersNaam'];
+							$sql = "SELECT `GebruikersID` FROM `gebruiker` WHERE `GebruikersNaam`='$GebruikersID'";
+							$foundID = mysqli_query($con,$sql);
+							while($r=mysqli_fetch_row($foundID))
+							$finalID = $r[0];
+							$savequery = "INSERT into `zoekstring` (GebruikersID, ZoekOpdracht, TijdZoeken)
+							VALUES ('$finalID', '$key', '$TijdZoeken')";
+							$saveresult = mysqli_query($con,$savequery);
+						}
+						//Einde inhoud tabel zoekopdrachten
 					}
 				?>
 			</div>
