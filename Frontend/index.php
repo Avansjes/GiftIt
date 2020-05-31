@@ -57,7 +57,8 @@
 							</div>
 							<br/>
 							<div class="feed-data">
-								<span><?php echo $row["Inhoud"]; ?></span>
+								<span class="image"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['ImageData'] ).'"/>'; ?></span>
+								<span class="content"><?php echo $row["Inhoud"]; ?></span>
 							</div>
 						</div>
 					</div>
