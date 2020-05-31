@@ -3,7 +3,7 @@ body, html {
 }
 
 body {
-	font-family:Arial, Sans-Serif;
+	font-family:'Open Sans', Arial, Sans-Serif;
 	margin: 0px;
 }
 
@@ -165,11 +165,31 @@ input[type='submit']:hover {
 
 .feed .feed-body {
 	float: left;
-	height: 140px;
+	max-height: 350px;
 }
 
 .feed .feed-body .feed-container {
 	padding: 15px 30px;
+}
+
+.feed .feed-body .title {
+	font-size: 15px;
+	font-weight: bold;
+	margin-bottom: -10px;
+}
+
+.feed .feed-body .content {
+	font-size: 13px;
+}
+
+.feed .feed-body .image {
+	max-height: 220px;
+	display: inline-block;
+	overflow: hidden;
+}
+
+.feed .feed-body .image img {
+	width: 100%;
 }
 
 .submit.wrap {
