@@ -34,9 +34,7 @@ https://docs.google.com/document/d/1x5BlHSEBYhNrlFyYwbp15nwWzUjzDbQFVAfnUtNu1Pk/
 #### Nice to have:
 - E-mail verificatie
 - Toon persoonlijke informatie plaatsers advertenties
-- Submit pagina verplaatsen naar een pop-up in index.php
 - Namen categorieën tonen
 - Advertenties selecteren via categorieën
 - Details over advertentie inzien
 - De welkomsttekst op index.php niet meer tonen als de gebruiker terug komt op index.php na submitten
-- Betere styling
