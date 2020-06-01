@@ -14,6 +14,7 @@
 		<title>GiftIt</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" href="images/favicon.ico">
 		<script src="js/lang.js"></script>
 	</head>
 	<body>
@@ -60,7 +61,8 @@
 									</div>
 									<br/>
 									<div class="feed-data">
-										<span><?php echo $row["Inhoud"]; ?></span>
+										<span class="image"><?php echo '<img src="data:image/jpeg;base64,'.base64_encode( $row['ImageData'] ).'"/>'; ?></span>
+										<span class="content"><?php echo $row["Inhoud"]; ?></span>
 									</div>
 								</div>
 							</div>

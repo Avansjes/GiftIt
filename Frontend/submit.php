@@ -13,6 +13,7 @@
 		<title>GiftIt</title>
 		<link rel="stylesheet" href="css/style.css" />
 		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<link rel="icon" href="images/favicon.ico">
 		<script src="js/lang.js"></script>
 	</head>
 	<body>
@@ -32,13 +33,15 @@
 			$Titel = mysqli_real_escape_string($con,$Titel);
 			$Inhoud = stripslashes($_POST['Inhoud']);
 			$Inhoud = mysqli_real_escape_string($con,$Inhoud);
+			$FotoData =addslashes(file_get_contents($_FILES['Foto']['tmp_name']));
 			//Page referenced for image uploading: https://www.geeksforgeeks.org/how-to-upload-image-into-database-and-display-it-using-php/
 			//Page referenced for storing image in BLOB: https://phppot.com/php/mysql-blob-using-php/
 			$StatusProduct = stripslashes($_POST['StatusProduct']);
 			$StatusProduct = mysqli_real_escape_string($con,$StatusProduct);
 			$CategorieID = stripslashes($_POST['CategorieID']);
 			$CategorieID = mysqli_real_escape_string($con,$CategorieID);
-			$query = "INSERT INTO `advertentie` (AanmaakDatum, GebruikersID, CategorieID, Titel, Inhoud, StatusProduct) VALUES ('$AanmaakDatum','$finalID', '$CategorieID', '$Titel', '$Inhoud', '$StatusProduct')";
+			//$Foto = addslashes(file_get_contents($_FILES['Foto']['tmp_name']));
+			$query = "INSERT INTO `advertentie` (AanmaakDatum, GebruikersID, CategorieID, Titel, Inhoud, StatusProduct, ImageData) VALUES ('$AanmaakDatum','$finalID', '$CategorieID', '$Titel', '$Inhoud', '$StatusProduct', '$FotoData')";
 			$result = mysqli_query($con,$query);
 			if($result){
 				//Back to index.php
@@ -67,10 +70,10 @@
 			</a>
 			<div class="submission">
 				<div class="new-submission">
-					<form lang="nl" name="new-submission" action="" method="post">
+					<form lang="nl" name="new-submission" enctype="multipart/form-data" action="" method="post">
 						<input type="text" name="Titel" placeholder="Plaats de titel hier" required />
 						<textarea name="Inhoud" placeholder="Plaats een beschrijving hier" required></textarea>
-						<input type="text" name="Foto" placeholder="Upload een foto" required />
+						<input type="file" name="Foto" id="fileToUpload" required>
 						<label for="StatusProduct">Selecteer hier de staat waarin het product verkeert:</label>
 						<select name="StatusProduct">
 							<option value="Nieuw">Nieuw</option>
@@ -105,10 +108,10 @@
 							<input type="submit" class="submit" name="submit" value="Plaats advertentie" />
 						</div>
 					</form>
-					<form lang="en" name="new-submission" action="" method="post">
+					<form lang="en" name="new-submission" enctype="multipart/form-data" action="" method="post">
 						<input type="text" name="Titel" placeholder="Place the title here" required />
 						<textarea name="Inhoud" placeholder="Place a description here" required></textarea>
-						<input type="text" name="Foto" placeholder="Upload a picture" required />
+						<input type="file" name="Foto" id="fileToUpload" required>
 						<label for="StatusProduct">Select the condition of the product:</label>
 						<select name="StatusProduct">
 							<option value="Nieuw">New</option>
