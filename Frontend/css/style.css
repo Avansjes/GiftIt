@@ -7,6 +7,8 @@ body {
 	margin: 0px;
 }
 
+/* The body is hidden to prevent "blinking" whenever a page loads but the js file hasn't had a chance to load yet */
+/* Details are in the lang.js file */
 body {
 	display: none;
 }
