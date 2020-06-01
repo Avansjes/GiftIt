@@ -2,6 +2,7 @@
 // Fiddle: http://jsfiddle.net/HoffZ/pWJnZ/
 
 window.onload = function() {
+	document.body.style.display = 'block';
 	if (localStorage.lang === null || localStorage.lang === "nl") {
 		document.getElementById("en").style.opacity = "0.3";
 		document.getElementById("nl").style.opacity = "1";
