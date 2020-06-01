@@ -38,7 +38,7 @@ CREATE TABLE `giftit`.`advertentie` (
 	`Titel`			TEXT(30)	NOT NULL,
 	`Inhoud`		TEXT(800)	NOT NULL,
 	`Staat`			BINARY(1)	NOT NULL,
-	`ImageID`		INT(10)		NOT NULL AUTO_INCREMENT,
+	`ImageID`		INT(10)		NOT NULL,
 	`ImageData`		LONGBLOB	NOT NULL,
 	`VerzendKosten` DECIMAL(8,2) DEFAULT '3.50',
 	`StatusProduct` VARCHAR(30)	DEFAULT 'Op zoek naar een nieuw thuis',
