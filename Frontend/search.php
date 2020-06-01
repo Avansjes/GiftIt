@@ -48,7 +48,7 @@
 						$con=mysqli_connect("localhost","root","","giftit");
 						$key = $_GET["search"]; //key=pattern to be searched
 						$searchquery = "SELECT * FROM `advertentie` where `Inhoud` like '%$key%'";
-						//Controleer verbinding
+						// Check connection
 						if (mysqli_connect_errno()) {
 							echo "Ik kon geen verbinding maken met de database. Foutmelding: " . mysqli_connect_error();
 						}
@@ -68,10 +68,10 @@
 							</div>
 						<?php
 						}
-						//Definieer inhoud voor de opgeslagen zoekopdrachten
+						// Define content for the saved results
 						$row_count = $result->num_rows;
-						//$result is een object met een aantal waardes (te vinden met print_r ($result)), één daarvan is num_rows, die het aantal zoekresultaten weer geeft. Zoeken op "jas" met de test database geeft een row van 2, "ring" geeft 1, "asdf" geeft 0.
-						//Deze code wordt alleen getriggerd als het aantal num_rows gelijk is aan 0. Met andere woorden, als er geen zoekresultaten zijn.
+						// $result is an object with a number of values (found with print_r ($ result)), one of which is num_rows, which shows the number of search results. Searching for "jas" with the test database gives a row of 2, "ring" gives 1, "asdf" gives 0.
+						// This code is only triggered if the number of num_rows is equal to 0. In other words, if there are no search results.
 						if ($row_count == 0) {
 							$TijdZoeken = date("Y-m-d H:i:s");
 							$GebruikersID = $_SESSION['GebruikersNaam'];
@@ -83,7 +83,7 @@
 							VALUES ('$finalID', '$key', '$TijdZoeken')";
 							$saveresult = mysqli_query($con,$savequery);
 						}
-						//Einde inhoud tabel zoekopdrachten
+						// End content table search results
 					}
 				?>
 			</div>

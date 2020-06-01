@@ -50,6 +50,7 @@
 		}else{
 		?>
 		<div class="submit wrap" style="background-image: url(images/register-bg.png);">
+			<!-- I tried various methods to work on multiple language-support that were less "messy", but this is what ended up working best. The submit forms had to be separated from each other, rather than have the individual elements hidden within the form, else the form could not be submitted because required information was not entered. -->
 			<div class="search-container">
 				<form action="search.php" lang="nl">
 					<input lang="nl" type="text" class="search" placeholder="Zoeken..." name="search">

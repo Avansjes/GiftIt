@@ -13,14 +13,16 @@
 		require('db.php');
 		// If form submitted, insert values into the database.
 		if (isset($_REQUEST['GebruikersNaam'])){
-			// removes backslashes
+			// Removes backslashes
 			$GebruikersNaam = stripslashes($_REQUEST['GebruikersNaam']);
-			//escapes special characters in a string
+			// Eescapes special characters in a string
+			// All variables need to be retrieved from the database. $con has been defined in db.php, which is included at the top of this form.
 			$GebruikersNaam = mysqli_real_escape_string($con,$GebruikersNaam);
 			$Email = stripslashes($_REQUEST['Email']);
 			$Email = mysqli_real_escape_string($con,$Email);
 			$WachtWoord = stripslashes($_REQUEST['WachtWoord']);
 			$WachtWoord = mysqli_real_escape_string($con,$WachtWoord);
+			// This query inserts data into the database.
 			$query = "INSERT into `gebruiker` (GebruikersNaam, WachtWoord, Email, Rol)
 			VALUES ('$GebruikersNaam', '$WachtWoord', '$Email', 'Gebruiker')";
 			$result = mysqli_query($con,$query);
